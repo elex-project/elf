@@ -6,8 +6,8 @@ plugins {
 }
 
 group = "com.elex-project"
-version = "1.0-SNAPSHOT"
-description = ""//todo
+version = "1.1.1"
+description = "Unit Conversion"
 
 repositories {
 	maven {
@@ -33,7 +33,7 @@ configurations {
 }
 
 tasks.jar {
-	manifest { // todo
+	manifest {
 		attributes(mapOf(
 				"Implementation-Title" to project.name,
 				"Implementation-Version" to project.version,
@@ -71,25 +71,18 @@ publishing {
 		create<MavenPublication>("mavenJava") {
 			from(components["java"])
 			pom {
-				// todo
-				name.set(project.name)
+				name.set("Elf: Unit Conversion")
 				description.set(project.description)
-				url.set("https://")
-				inceptionYear.set("2021")
-				properties.set(mapOf(
-						"myProp" to "value",
-						"prop.with.dots" to "anotherValue"
-				))
+				url.set("https://www.eelx-project.com/")
+				inceptionYear.set("2017")
 				organization {
 					name.set("Elex co.,Pte.")
 					url.set("https://www.elex-project.com/")
 				}
 				licenses {
 					license {
-						// todo
 						name.set("BSD 3-Clause License")
-						url.set("licenseUrl")
-						comments.set("")
+						url.set("https://github.com/elex-project/elf/blob/main/LICENSE")
 					}
 				}
 				developers {
@@ -102,21 +95,19 @@ publishing {
 						organizationUrl.set("https://www.elex-project.com/")
 						roles.set(arrayListOf("Developer", "CEO"))
 						timezone.set("Asia/Seoul")
-						properties.set(mapOf("" to ""))
 					}
 				}
-				contributors {
+				/*contributors {
 					contributor {
 						name.set("")
 						email.set("")
 						url.set("")
 					}
-				}
+				}*/
 				scm {
-					// todo
-					connection.set("scm:git:https://github.com/my-library.git")
-					developerConnection.set("scm:git:https://github.com/my-library.git")
-					url.set("https://github.com/my-library/")
+					connection.set("scm:git:https://github.com/elex-project/elf.git")
+					developerConnection.set("scm:git:https://github.com/elex-project/elf.git")
+					url.set("https://github.com/elex-project/")
 				}
 			}
 		}
@@ -134,9 +125,9 @@ publishing {
 				password = project.findProperty("repo.password") as String
 			}
 		}
-		maven { //todo
+		maven {
 			name = "mavenGithub"
-			url = uri("https://maven.pkg.github.com/elex-project/tmpl-java-library")
+			url = uri("https://maven.pkg.github.com/elex-project/elf")
 			credentials {
 				username = project.findProperty("github.username") as String
 				password = project.findProperty("github.token") as String
@@ -146,9 +137,10 @@ publishing {
 }
 
 dependencies {
-	implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 	implementation("org.slf4j:slf4j-api:1.7.30")
 	implementation("org.jetbrains:annotations:21.0.1")
+
+	implementation("com.elex-project:abraxas:4.5.7")
 
 	compileOnly("org.projectlombok:lombok:1.18.20")
 	annotationProcessor("org.projectlombok:lombok:1.18.20")

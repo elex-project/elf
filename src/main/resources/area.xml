@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--
+  ~ Project Elf
+  ~ http://www.elex-project.com/
+  ~ Copyright (c) 2017. Elex. All Rights Reserved.
+  ~
+  -->
+
+<!DOCTYPE properties SYSTEM
+    "http://java.sun.com/dtd/properties.dtd">
+<properties >
+    <entry key="acre">Acre</entry>
+    <entry key="are">Are</entry>
+    <entry key="danbo">Dan(段步)</entry>
+    <entry key="hectare">Hectare</entry>
+    <entry key="jungbo">Jung(町步)</entry>
+    <entry key="pyung">Pyung(坪)</entry>
+    <entry key="pyungbangJa">Square-Ja</entry>
+    <entry key="squareFeet">Square Feet</entry>
+    <entry key="squareKilometer">Square KiloMeter</entry>
+    <entry key="squareMeter">Square Meter</entry>
+    <entry key="squareYard">Square Yard</entry>
+</properties>
+

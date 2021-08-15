@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--
+  ~ Project Elf
+  ~ http://www.elex-project.com/
+  ~ Copyright (c) 2017. Elex. All Rights Reserved.
+  ~
+  -->
+
+<!DOCTYPE properties SYSTEM
+    "http://java.sun.com/dtd/properties.dtd">
+<properties >
+    <entry key="dyne">다인</entry>
+    <entry key="gramForce">그램중</entry>
+    <entry key="kilogramForce">킬로그램중</entry>
+    <entry key="newton">뉴튼</entry>
+    <entry key="pound">파운드중</entry>
+    <entry key="poundal">파운달</entry>
+</properties>

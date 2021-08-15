@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--
+  ~ Project Elf
+  ~ http://www.elex-project.com/
+  ~ Copyright (c) 2017. Elex. All Rights Reserved.
+  ~
+  -->
+
+<!DOCTYPE properties SYSTEM
+    "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="meterPerSec">m/s</entry>
+    <entry key="meterPerHour">m/h</entry>
+    <entry key="kilometerPerSec">km/s</entry>
+    <entry key="kilometerPerHour">km/h</entry>
+    <entry key="inchPerSec">inch/s</entry>
+    <entry key="inchPerHour">inch/h</entry>
+    <entry key="feetPerSec">ft/s</entry>
+    <entry key="feetPerHour">ft/h</entry>
+    <entry key="milePerSec">mile/s</entry>
+    <entry key="milePerHour">mile/h</entry>
+    <entry key="knot">Knot</entry>
+    <entry key="mach">Mach</entry>
+    <entry key="c">Speed of Light</entry>
+</properties>

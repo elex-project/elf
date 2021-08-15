@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--
+  ~ Project Elf
+  ~ http://www.elex-project.com/
+  ~ Copyright (c) 2017. Elex. All Rights Reserved.
+  ~
+  -->
+
+<!DOCTYPE properties SYSTEM
+    "http://java.sun.com/dtd/properties.dtd">
+<properties >
+    <entry key="celsius">섭씨</entry>
+    <entry key="fahrenheit">화씨</entry>
+    <entry key="kelvin">캘빈</entry>
+    <entry key="rankin">랜킨</entry>
+</properties>

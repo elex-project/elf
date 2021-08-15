@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--
+  ~ Project Elf
+  ~ http://www.elex-project.com/
+  ~ Copyright (c) 2017. Elex. All Rights Reserved.
+  ~
+  -->
+
+<!DOCTYPE properties SYSTEM
+    "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="joule">줄</entry>
+    <entry key="kilojoule">킬로줄</entry>
+    <entry key="megajoule">메가줄</entry>
+    <entry key="wattHour">와트시간</entry>
+    <entry key="kilowattHour">킬로와트시간</entry>
+    <entry key="erg">Erg</entry>
+    <entry key="footPoundForce">ft lbf</entry>
+    <entry key="calorie">칼로리</entry>
+</properties>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--
+  ~ Project Elf
+  ~ http://www.elex-project.com/
+  ~ Copyright (c) 2017. Elex. All Rights Reserved.
+  ~
+  -->
+
+<!DOCTYPE properties SYSTEM
+    "http://java.sun.com/dtd/properties.dtd">
+<properties >
+    <entry key="horsePower">Horse Power</entry>
+    <entry key="kilowatt">KiloWatt</entry>
+    <entry key="watt">Watt</entry>
+</properties>

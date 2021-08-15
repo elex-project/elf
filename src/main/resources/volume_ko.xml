@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--
+  ~ Project Elf
+  ~ http://www.elex-project.com/
+  ~ Copyright (c) 2017. Elex. All Rights Reserved.
+  ~
+  -->
+
+<!DOCTYPE properties SYSTEM
+    "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="cc">씨씨</entry>
+    <entry key="milliliter">밀리리터</entry>
+    <entry key="deciliter">데시리터</entry>
+    <entry key="liter">리터</entry>
+    <entry key="cubicCentimeter">입방센티미터</entry>
+    <entry key="cubicMeter">입방미터</entry>
+    <entry key="cubicInch">입방인치</entry>
+    <entry key="cubicFeet">입방피트</entry>
+    <entry key="cubicYard">입방야드</entry>
+    <entry key="gallon">갤런 (fl.)</entry>
+    <entry key="barrel">배럴 (fl.)</entry>
+    <entry key="ounce">온스 (fl.)</entry>
+    <entry key="ounceBr">온스(영)</entry>
+    <entry key="pint">파인트 (fl.)</entry>
+    <entry key="pintBr">파인트(영)</entry>
+    <entry key="hob">홉(合)</entry>
+    <entry key="doi">되(升)</entry>
+    <entry key="mal">말(斗)</entry>
+    <entry key="jak">작(勺)</entry>
+    <entry key="sum">섬(石)</entry>
+    <entry key="acreFoot">에이커-피트</entry>
+    <entry key="pintDry">파인트 (dry)</entry>
+    <entry key="quart">쿼트 (fl.)</entry>
+    <entry key="quartDry">쿼트 (dry)</entry>
+    <entry key="quartBr">쿼트 (영)</entry>
+    <entry key="gallonDry">갤런 (dry)</entry>
+    <entry key="gallonBr">갤런 (영)</entry>
+    <entry key="barrelDry">배럴 (dry)</entry>
+    <entry key="barrelBr">배럴 (영)</entry>
+    <entry key="barrelPetro">배럴 (석유)</entry>
+</properties>

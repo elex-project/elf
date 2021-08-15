@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--
+  ~ Project Elf
+  ~ http://www.elex-project.com/
+  ~ Copyright (c) 2017. Elex. All Rights Reserved.
+  ~
+  -->
+
+<!DOCTYPE properties SYSTEM
+    "http://java.sun.com/dtd/properties.dtd">
+<properties >
+    <entry key="millimeter">MilliMeter</entry>
+    <entry key="centimeter">CentiMeter</entry>
+    <entry key="meter">Meter</entry>
+    <entry key="kilometer">KiloMeter</entry>
+    <entry key="inch">Inch</entry>
+    <entry key="foot">Foot</entry>
+    <entry key="yard">Yard</entry>
+    <entry key="mile">Mile</entry>
+    <entry key="nauticalMile">Nautical Mile</entry>
+    <entry key="ja">Ja(尺)</entry>
+    <entry key="gan">Gan(間)</entry>
+    <entry key="jung">Jung(町)</entry>
+    <entry key="ri">Ri(里)</entry>
+    <entry key="chi">Chi(寸)</entry>
+    <entry key="poon">Poon(分)</entry>
+    <entry key="mil">Mil</entry>
+</properties>
+

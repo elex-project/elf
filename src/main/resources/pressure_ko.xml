@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--
+  ~ Project Elf
+  ~ http://www.elex-project.com/
+  ~ Copyright (c) 2017. Elex. All Rights Reserved.
+  ~
+  -->
+
+<!DOCTYPE properties SYSTEM
+    "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="atm">기압</entry>
+    <entry key="bar">바</entry>
+    <entry key="millibar">밀리바</entry>
+    <entry key="dynePerSquareCentimeter">다인 / 제곱인치</entry>
+    <entry key="hectopascal">헥토파스칼</entry>
+    <entry key="inchH2o">수주 인치</entry>
+    <entry key="inchHg">수은주 인치</entry>
+    <entry key="kilogramForcePerSquareCentimeter">kgf / 제곱센티미터</entry>
+    <entry key="kilopascal">킬로파스칼</entry>
+    <entry key="megapascal">메가파스칼</entry>
+    <entry key="millimeterH2o">수주 밀리미터</entry>
+    <entry key="millimeterHg">수은주 밀리미터</entry>
+    <entry key="pascal">파스칼</entry>
+    <entry key="poundPerSquareFeet">lb / Square feet</entry>
+    <entry key="poundPerSquareInch">프사이</entry>
+</properties>
