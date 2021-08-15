@@ -1,31 +1,30 @@
 /*
  * Project Elf
- * http://www.elex-project.com/
- * Copyright (c) 2017. Elex. All Rights Reserved.
+ * Unit Conversion
  *
+ * Copyright (c) 2017-2021. Elex. All Rights Reserved.
+ * https://www.elex-project.com/
  */
 
 package com.elex_project.elf;
 
-import com.elex_project.abraxas.ResourceBundle;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public enum Power implements IConvertableUnit<Power> {
-	WATT("watt", 1D),
-	KILOWATT("kilowatt", 1 / 1000D),
-	HORSE_POWER("horsePower", 1 / 735.49875D),;
+	WATT("power.watt", 1D),
+	KILOWATT("power.kilowatt", 1 / 1000D),
+	HORSE_POWER("power.horsePower", 1 / 735.49875D),
+	;
 
+	private final double factor;
 	private String name, html;
-	private double factor;
 
 	Power(String key, double factor) {
 		try {
-			ResourceBundle bundle = ResourceBundle.getBundle("/power.xml", getClass());
-			ResourceBundle bundleHtml = ResourceBundle.getBundle("/power-unit.properties", getClass());
-			this.name = bundle.get(key).get();
-			this.html = bundleHtml.get(key).get();
+			this.name = Bundle.get(key);
+			this.html = Bundle.getUnit(key);
 		} catch (Throwable e) {
 			this.name = this.name();
 			this.html = this.name();

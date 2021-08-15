@@ -1,37 +1,34 @@
 /*
  * Project Elf
- * http://www.elex-project.com/
- * Copyright (c) 2017. Elex. All Rights Reserved.
+ * Unit Conversion
  *
+ * Copyright (c) 2017-2021. Elex. All Rights Reserved.
+ * https://www.elex-project.com/
  */
 
 package com.elex_project.elf;
 
-import com.elex_project.abraxas.LanguageBundle;
-import com.elex_project.abraxas.ResourceBundle;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public enum Acceleration implements IConvertableUnit<Acceleration> {
-	METER_PER_SQ_SEC("meterPerSquareSecond", 1D),
-	INCH_PER_SQ_SEC("inchPerSquareSecond", Length.INCH.getFactor()),
-	FOOT_PER_SQ_SEC("footPerSquareSecond", Length.FOOT.getFactor()),
-	ACC_OF_GRAVITY("accelerationOfGravity", METER_PER_SQ_SEC.factor / 9.80665),;
+	METER_PER_SQ_SEC("acceleration.meterPerSquareSecond", 1D),
+	INCH_PER_SQ_SEC("acceleration.inchPerSquareSecond", Length.INCH.getFactor()),
+	FOOT_PER_SQ_SEC("acceleration.footPerSquareSecond", Length.FOOT.getFactor()),
+	ACC_OF_GRAVITY("acceleration.accelerationOfGravity", METER_PER_SQ_SEC.factor / 9.80665),
+	;
 
+	private final double factor;
 	//private String uid;
 	private String name, html;
-	private double factor;
 
 	Acceleration(String key, double factor) {
 		//this.uid = key;
 		try {
-			ResourceBundle bundle = ResourceBundle.getBundle("/acceleration.xml", getClass());
-			ResourceBundle bundleHtml = ResourceBundle.getBundle("/acceleration-unit.properties", getClass());
-			this.name = bundle.get(key).get();
-			System.out.println("name => "+this.name);
-			this.html = bundleHtml.get(key).get();
+			this.name = Bundle.get(key);
+			System.out.println("name => " + this.name);
+			this.html = Bundle.getUnit(key);
 		} catch (Throwable e) {
 			e.printStackTrace();
 			this.name = this.name();

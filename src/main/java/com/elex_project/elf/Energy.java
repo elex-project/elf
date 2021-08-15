@@ -1,36 +1,35 @@
 /*
  * Project Elf
- * http://www.elex-project.com/
- * Copyright (c) 2017. Elex. All Rights Reserved.
+ * Unit Conversion
  *
+ * Copyright (c) 2017-2021. Elex. All Rights Reserved.
+ * https://www.elex-project.com/
  */
 
 package com.elex_project.elf;
 
-import com.elex_project.abraxas.ResourceBundle;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public enum Energy implements IConvertableUnit<Energy> {
-	JOULE("joule", 1D),
-	KILOJOULE("kilojoule", JOULE.factor / 1000),
-	MEGAJOULE("megajoule", KILOJOULE.factor / 1000),
-	WATT_HOUR("wattHour", JOULE.factor / 3600),
-	KILOWATT_HOUR("kilowattHour", WATT_HOUR.factor / 1000),
-	ERG("erg", JOULE.factor * 10000000D),
-	FOOT_POUND_FORCE("footPoundForce", JOULE.factor / 1.3558179483314004D),//0.73756D
-	CALORIE("calorie", JOULE.factor / 4.1868D),;
+	JOULE("energy.joule", 1D),
+	KILOJOULE("energy.kilojoule", JOULE.factor / 1000),
+	MEGAJOULE("energy.megajoule", KILOJOULE.factor / 1000),
+	WATT_HOUR("energy.wattHour", JOULE.factor / 3600),
+	KILOWATT_HOUR("energy.kilowattHour", WATT_HOUR.factor / 1000),
+	ERG("energy.erg", JOULE.factor * 10000000D),
+	FOOT_POUND_FORCE("energy.footPoundForce", JOULE.factor / 1.3558179483314004D),//0.73756D
+	CALORIE("energy.calorie", JOULE.factor / 4.1868D),
+	;
 
+	private final double factor;
 	private String name, html;
-	private double factor;
 
 	Energy(String key, double factor) {
 		try {
-			ResourceBundle bundle = ResourceBundle.getBundle("/energy.xml", getClass());
-			ResourceBundle bundleHtml = ResourceBundle.getBundle("/energy-unit.properties", getClass());
-			this.name = bundle.get(key).get();
-			this.html = bundleHtml.get(key).get();
+			this.name = Bundle.get(key);
+			this.html = Bundle.getUnit(key);
 		} catch (Throwable e) {
 			this.name = this.name();
 			this.html = this.name();

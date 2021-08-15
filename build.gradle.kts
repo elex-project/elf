@@ -1,3 +1,11 @@
+/*
+ * Project Elf
+ * Unit Conversion
+ *
+ * Copyright (c) 2021-2021. Elex. All Rights Reserved.
+ * https://www.elex-project.com/
+ */
+
 plugins {
 	java
 	`java-library`
@@ -6,7 +14,7 @@ plugins {
 }
 
 group = "com.elex-project"
-version = "1.1.1"
+version = "1.2.0"
 description = "Unit Conversion"
 
 repositories {
@@ -73,7 +81,7 @@ publishing {
 			pom {
 				name.set("Elf: Unit Conversion")
 				description.set(project.description)
-				url.set("https://www.eelx-project.com/")
+				url.set("https://www.elex-project.com/")
 				inceptionYear.set("2017")
 				organization {
 					name.set("Elex co.,Pte.")

@@ -1,33 +1,31 @@
 /*
  * Project Elf
- * http://www.elex-project.com/
- * Copyright (c) 2017. Elex. All Rights Reserved.
+ * Unit Conversion
  *
+ * Copyright (c) 2017-2021. Elex. All Rights Reserved.
+ * https://www.elex-project.com/
  */
 
 package com.elex_project.elf;
 
-import com.elex_project.abraxas.ResourceBundle;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public enum Angle implements IConvertableUnit<Angle> {
-	DEGREE("degree", 360D),
-	RADIAN("radian", 2D * Math.PI),
-	GRADIAN("gradian", DEGREE.factor/0.9),
-	MILL("mill", GRADIAN.factor*16),
-	ROTATION("rotation", 1D);
+	DEGREE("angle.degree", 360D),
+	RADIAN("angle.radian", 2D * Math.PI),
+	GRADIAN("angle.gradian", DEGREE.factor / 0.9),
+	MILL("angle.mill", GRADIAN.factor * 16),
+	ROTATION("angle.rotation", 1D);
 
+	private final double factor;
 	private String name, html;
-	private double factor;
 
 	Angle(String key, double factor) {
 		try {
-			ResourceBundle bundle = ResourceBundle.getBundle("/angle.xml", getClass());
-			ResourceBundle bundleHtml = ResourceBundle.getBundle("/angle-unit.properties", getClass());
-			this.name = bundle.get(key).get();
-			this.html = bundleHtml.get(key).get();
+			this.name = Bundle.get(key);
+			this.html = Bundle.getUnit(key);
 		} catch (Throwable e) {
 			this.name = this.name();
 			this.html = this.name();
@@ -116,7 +114,7 @@ public enum Angle implements IConvertableUnit<Angle> {
 
 		@Override
 		public String toString() {
-			return String.format("%d° %d′ %.3f″", (long) d, (int) m, s);
+			return String.format("angle.%d° %d′ %.3f″", (long) d, (int) m, s);
 			//return (long)d + "° " + (int)m + "′ " + s+ "″";
 		}
 	}

@@ -1,11 +1,22 @@
+/*
+ * Project Elf
+ * Unit Conversion
+ *
+ * Copyright (c) 2021-2021. Elex. All Rights Reserved.
+ * https://www.elex-project.com/
+ */
+
 package com.elex_project.elf;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public final class Units {
 	private static final List<String> UNITS;// = Collections.unmodifiableList()
+
 	static {
 		ArrayList<String> list = new ArrayList<>();
 		list.add("length");

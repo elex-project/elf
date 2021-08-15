@@ -1,46 +1,45 @@
 /*
  * Project Elf
- * http://www.elex-project.com/
- * Copyright (c) 2017. Elex. All Rights Reserved.
+ * Unit Conversion
  *
+ * Copyright (c) 2017-2021. Elex. All Rights Reserved.
+ * https://www.elex-project.com/
  */
 
 package com.elex_project.elf;
 
-import com.elex_project.abraxas.ResourceBundle;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public enum Length implements IConvertableUnit<Length> {
-	METER("meter", 1D),
-	MILLIMETER("millimeter", METER.factor * 1000),
-	CENTIMETER("centimeter", METER.factor * 100),
-	KILOMETER("kilometer", METER.factor / 1000),
+	METER("length.meter", 1D),
+	MILLIMETER("length.millimeter", METER.factor * 1000),
+	CENTIMETER("length.centimeter", METER.factor * 100),
+	KILOMETER("length.kilometer", METER.factor / 1000),
 
-	INCH("inch", CENTIMETER.factor / 2.54), // 1 inch = 2.54 cm
-	MIL("mil", INCH.factor * 1000),
-	FOOT("foot", INCH.factor / 12),
-	YARD("yard", FOOT.factor / 3),
-	MILE("mile", FOOT.factor / 5280),
-	NAUTICALMILE("nauticalMile", METER.factor / 1852),
+	INCH("length.inch", CENTIMETER.factor / 2.54), // 1 inch = 2.54 cm
+	MIL("length.mil", INCH.factor * 1000),
+	FOOT("length.foot", INCH.factor / 12),
+	YARD("length.yard", FOOT.factor / 3),
+	MILE("length.mile", FOOT.factor / 5280),
+	NAUTICALMILE("length.nauticalMile", METER.factor / 1852),
 
-	JA("ja", 3.3D), // 10/33meter
-	CHI("chi", JA.factor * 10), // 10치=1자
-	POON("poon", CHI.factor * 10), //10푼=1치
-	GAN("gan", JA.factor / 6), // 1칸=6자
-	JUNG("jung", GAN.factor / 60), //1정 = 60칸
-	RI("ri", JUNG.factor / 36),; //1리=36정
+	JA("length.ja", 3.3D), // 10/33meter
+	CHI("length.chi", JA.factor * 10), // 10치=1자
+	POON("length.poon", CHI.factor * 10), //10푼=1치
+	GAN("length.gan", JA.factor / 6), // 1칸=6자
+	JUNG("length.jung", GAN.factor / 60), //1정 = 60칸
+	RI("length.ri", JUNG.factor / 36),//1리=36정
+	;
 
+	private final double factor;
 	private String name, html;
-	private double factor;
 
 	Length(String key, double factor) {
 		try {
-			ResourceBundle bundle = ResourceBundle.getBundle("/length.xml", getClass());
-			ResourceBundle bundleHtml = ResourceBundle.getBundle("/length-unit.properties", getClass());
-			this.name = bundle.get(key).get();
-			this.html = bundleHtml.get(key).get();
+			this.name = Bundle.get(key);
+			this.html = Bundle.getUnit(key);
 		} catch (Throwable e) {
 			this.name = this.name();
 			this.html = this.name();

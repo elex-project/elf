@@ -1,34 +1,33 @@
 /*
  * Project Elf
- * http://www.elex-project.com/
- * Copyright (c) 2017. Elex. All Rights Reserved.
+ * Unit Conversion
  *
+ * Copyright (c) 2017-2021. Elex. All Rights Reserved.
+ * https://www.elex-project.com/
  */
 
 package com.elex_project.elf;
 
-import com.elex_project.abraxas.ResourceBundle;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public enum Force implements IConvertableUnit<Force> {
-	NEWTON("newton", 1D),
-	DYNE("dyne", 100000D),
-	POUND("pound", 1 / 4.4482216152605D),
-	POUNDAL("poundal", POUND.factor * 32.17398),
-	GRAM_FORCE("gramForce", 1D / 9.80665 * 1000),
-	KILOGRAM_FORCE("kilogramForce", 1D / 9.80665),;
+	NEWTON("force.newton", 1D),
+	DYNE("force.dyne", 100000D),
+	POUND("force.pound", 1 / 4.4482216152605D),
+	POUNDAL("force.poundal", POUND.factor * 32.17398),
+	GRAM_FORCE("force.gramForce", 1D / 9.80665 * 1000),
+	KILOGRAM_FORCE("force.kilogramForce", 1D / 9.80665),
+	;
 
+	private final double factor;
 	private String name, html;
-	private double factor;
 
 	Force(String key, double factor) {
 		try {
-			ResourceBundle bundle = ResourceBundle.getBundle("/force.xml", getClass());
-			ResourceBundle bundleHtml = ResourceBundle.getBundle("/force-unit.properties", getClass());
-			this.name = bundle.get(key).get();
-			this.html = bundleHtml.get(key).get();
+			this.name = Bundle.get(key);
+			this.html = Bundle.getUnit(key);
 		} catch (Throwable e) {
 			this.name = this.name();
 			this.html = this.name();

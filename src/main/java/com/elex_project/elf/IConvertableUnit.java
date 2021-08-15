@@ -1,8 +1,9 @@
 /*
  * Project Elf
- * http://www.elex-project.com/
- * Copyright (c) 2017. Elex. All Rights Reserved.
+ * Unit Conversion
  *
+ * Copyright (c) 2017-2021. Elex. All Rights Reserved.
+ * https://www.elex-project.com/
  */
 
 package com.elex_project.elf;
@@ -13,15 +14,15 @@ import java.util.ArrayList;
  * Created by Elex on 2014-05-21.
  */
 public interface IConvertableUnit<T> {
-	public String getTitle();
+	String getTitle();
 
-	public String getUnit();
+	String getUnit();
 
-	public double getFactor();
+	double getFactor();
 
-	public double convertTo(double val, T another);
+	double convertTo(double val, T another);
 
-	public ArrayList<ResultSet> calcAll(double val);
+	ArrayList<ResultSet> calcAll(double val);
 
-	public ResultSet calc(double val, T another);
+	ResultSet calc(double val, T another);
 }

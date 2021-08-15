@@ -1,44 +1,43 @@
 /*
  * Project Elf
- * http://www.elex-project.com/
- * Copyright (c) 2017. Elex. All Rights Reserved.
+ * Unit Conversion
  *
+ * Copyright (c) 2017-2021. Elex. All Rights Reserved.
+ * https://www.elex-project.com/
  */
 
 package com.elex_project.elf;
 
-import com.elex_project.abraxas.ResourceBundle;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public enum Mass implements IConvertableUnit<Mass> {
-	KILOGRAM("kilogram", 1D),
-	GRAM("gram", KILOGRAM.factor * 1000),
-	MILLIGRAM("milligram", GRAM.factor * 1000),
-	TON("ton", KILOGRAM.factor / 1000),
-	KILOTON("kiloton", TON.factor / 1000),
+	KILOGRAM("mass.kilogram", 1D),
+	GRAM("mass.gram", KILOGRAM.factor * 1000),
+	MILLIGRAM("mass.milligram", GRAM.factor * 1000),
+	TON("mass.ton", KILOGRAM.factor / 1000),
+	KILOTON("mass.kiloton", TON.factor / 1000),
 
-	POUND("pound", KILOGRAM.factor/0.45359237),
-	DRAM("dram", POUND.factor*256),
-	OUNCE("ounce", POUND.factor*16),
-	GRAIN("grain", POUND.factor*7000),
+	POUND("mass.pound", KILOGRAM.factor / 0.45359237),
+	DRAM("mass.dram", POUND.factor * 256),
+	OUNCE("mass.ounce", POUND.factor * 16),
+	GRAIN("mass.grain", POUND.factor * 7000),
 
-	GWAN("gwan", KILOGRAM.factor / 3.75D),
-	DON("don", GWAN.factor * 1000),
-	NYANG("nyang", DON.factor / 10),
-	GEUN("geun", DON.factor / 160),;
+	GWAN("mass.gwan", KILOGRAM.factor / 3.75D),
+	DON("mass.don", GWAN.factor * 1000),
+	NYANG("mass.nyang", DON.factor / 10),
+	GEUN("mass.geun", DON.factor / 160),
+	;
 
 
+	private final double factor;
 	private String name, html;
-	private double factor;
 
 	Mass(String key, double factor) {
 		try {
-			ResourceBundle bundle = ResourceBundle.getBundle("/mass.xml", getClass());
-			ResourceBundle bundleHtml = ResourceBundle.getBundle("/mass-unit.properties", getClass());
-			this.name = bundle.get(key).get();
-			this.html = bundleHtml.get(key).get();
+			this.name = Bundle.get(key);
+			this.html = Bundle.getUnit(key);
 		} catch (Exception e) {
 			this.name = this.name();
 			this.html = this.name();

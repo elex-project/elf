@@ -1,13 +1,13 @@
 /*
  * Project Elf
- * http://www.elex-project.com/
- * Copyright (c) 2017. Elex. All Rights Reserved.
+ * Unit Conversion
  *
+ * Copyright (c) 2017-2021. Elex. All Rights Reserved.
+ * https://www.elex-project.com/
  */
 
 package com.elex_project.elf;
 
-import com.elex_project.abraxas.ResourceBundle;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -16,19 +16,18 @@ import java.util.ArrayList;
  * Created by Elex on 2014-05-22.
  */
 public enum Temperature implements IConvertableUnit<Temperature> {
-	CELSIUS("celsius"),
-	FAHRENHEIT("fahrenheit"),
-	KELVIN("kelvin"),
-	RANKIN("rankin"),;
+	CELSIUS("temperature.celsius"),
+	FAHRENHEIT("temperature.fahrenheit"),
+	KELVIN("temperature.kelvin"),
+	RANKIN("temperature.rankin"),
+	;
 
 	private String name, html;
 
 	Temperature(String key) {
 		try {
-			ResourceBundle bundle = ResourceBundle.getBundle("/temperature.xml", getClass());
-			ResourceBundle bundleHtml = ResourceBundle.getBundle("/temperature-unit.properties", getClass());
-			this.name = bundle.get(key).get();
-			this.html = bundleHtml.get(key).get();
+			this.name = Bundle.get(key);
+			this.html = Bundle.getUnit(key);
 		} catch (Throwable e) {
 			this.name = this.name();
 			this.html = this.name();

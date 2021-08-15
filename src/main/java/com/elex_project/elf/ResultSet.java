@@ -1,8 +1,9 @@
 /*
  * Project Elf
- * http://www.elex-project.com/
- * Copyright (c) 2017. Elex. All Rights Reserved.
+ * Unit Conversion
  *
+ * Copyright (c) 2017-2021. Elex. All Rights Reserved.
+ * https://www.elex-project.com/
  */
 
 package com.elex_project.elf;
@@ -24,6 +25,27 @@ public final class ResultSet implements Comparable<ResultSet> {
 	ResultSet() {
 	}
 
+	@NotNull
+	public static ArrayList<ResultSet> sort(@NotNull ArrayList<ResultSet> s) {
+		s.sort(new Comparator<ResultSet>() {
+			@Override
+			public int compare(ResultSet o1, ResultSet o2) {
+				return o1.compareTo(o2);
+			}
+		});
+		return s;
+	}
+
+	@NotNull
+	public static <T extends IConvertableUnit<?>> ResultSet generate(double val, @NotNull IConvertableUnit<T> from, @NotNull T another) {
+		ResultSet resultSet = new ResultSet();
+		resultSet.title = another.getTitle();
+		resultSet.value = from.convertTo(val, another);
+		resultSet.unit = another.getUnit();
+
+		return resultSet;
+	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -37,17 +59,6 @@ public final class ResultSet implements Comparable<ResultSet> {
 	}
 
 	@NotNull
-	public static ArrayList<ResultSet> sort(@NotNull ArrayList<ResultSet> s) {
-		s.sort(new Comparator<ResultSet>() {
-			@Override
-			public int compare(ResultSet o1, ResultSet o2) {
-				return o1.compareTo(o2);
-			}
-		});
-		return s;
-	}
-
-	@NotNull
 	@Override
 	public String toString() {
 		NumberFormat format = NumberFormat.getNumberInstance();
@@ -58,16 +69,5 @@ public final class ResultSet implements Comparable<ResultSet> {
 	@Override
 	public int compareTo(@NotNull ResultSet o) {
 		return Double.compare(this.value, o.value);
-	}
-
-
-	@NotNull
-	public static <T extends IConvertableUnit<?>> ResultSet generate(double val, @NotNull IConvertableUnit<T> from, @NotNull T another) {
-		ResultSet resultSet = new ResultSet();
-		resultSet.title = another.getTitle();
-		resultSet.value = from.convertTo(val, another);
-		resultSet.unit = another.getUnit();
-
-		return resultSet;
 	}
 }

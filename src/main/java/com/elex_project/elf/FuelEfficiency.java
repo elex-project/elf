@@ -1,30 +1,29 @@
 /*
  * Project Elf
- * http://www.elex-project.com/
- * Copyright (c) 2017. Elex. All Rights Reserved.
+ * Unit Conversion
  *
+ * Copyright (c) 2017-2021. Elex. All Rights Reserved.
+ * https://www.elex-project.com/
  */
 
 package com.elex_project.elf;
 
-import com.elex_project.abraxas.ResourceBundle;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public enum FuelEfficiency implements IConvertableUnit<FuelEfficiency> {
-	KILOMETER_PER_LITER("kilometerPerLiter", 1D),
-	MILE_PER_GALLON("milePerGallon", 2.352146D),
-	LITER_PER_100KILOMETER("literPer100Kilometer", 0),;
+	KILOMETER_PER_LITER("fuel.kilometerPerLiter", 1D),
+	MILE_PER_GALLON("fuel.milePerGallon", 2.352146D),
+	LITER_PER_100KILOMETER("fuel.literPer100Kilometer", 0),
+	;
+	private final double factor;
 	private String name, html;
-	private double factor;
 
 	FuelEfficiency(String key, double factor) {
 		try {
-			ResourceBundle bundle = ResourceBundle.getBundle("/fuel.xml", getClass());
-			ResourceBundle bundleHtml = ResourceBundle.getBundle("/fuel-unit.properties", getClass());
-			this.name = bundle.get(key).get();
-			this.html = bundleHtml.get(key).get();
+			this.name = Bundle.get(key);
+			this.html = Bundle.getUnit(key);
 		} catch (Throwable e) {
 			this.name = this.name();
 			this.html = this.name();

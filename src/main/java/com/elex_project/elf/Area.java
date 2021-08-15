@@ -1,39 +1,38 @@
 /*
  * Project Elf
- * http://www.elex-project.com/
- * Copyright (c) 2017. Elex. All Rights Reserved.
+ * Unit Conversion
  *
+ * Copyright (c) 2017-2021. Elex. All Rights Reserved.
+ * https://www.elex-project.com/
  */
 
 package com.elex_project.elf;
 
-import com.elex_project.abraxas.ResourceBundle;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public enum Area implements IConvertableUnit<Area> {
-	SQUARE_METER("squareMeter", Math.pow(Length.METER.getFactor(), 2)),
-	ARE("are", SQUARE_METER.factor / 100),
-	HECTARE("hectare", ARE.factor / 100),
-	SQUARE_KILOMETER("squareKilometer", Math.pow(Length.KILOMETER.getFactor(), 2)),
-	SQUARE_FEET("squareFeet", Math.pow(Length.FOOT.getFactor(), 2)),
-	SQUARE_YARD("squareYard", Math.pow(Length.YARD.getFactor(), 2)),
-	ACRE("acre", SQUARE_YARD.factor / 4840),
-	PYUNGBANG_JA("pyungbangJa", Math.pow(Length.JA.getFactor(), 2)),
-	PYUNG("pyung", Math.pow(Length.GAN.getFactor(), 2)),
-	DANBO("danbo", PYUNG.factor / 300),
-	JUNGBO("jungbo", DANBO.factor / 10);
+	SQUARE_METER("area.squareMeter", Math.pow(Length.METER.getFactor(), 2)),
+	ARE("area.are", SQUARE_METER.factor / 100),
+	HECTARE("area.hectare", ARE.factor / 100),
+	SQUARE_KILOMETER("area.squareKilometer", Math.pow(Length.KILOMETER.getFactor(), 2)),
+	SQUARE_FEET("area.squareFeet", Math.pow(Length.FOOT.getFactor(), 2)),
+	SQUARE_YARD("area.squareYard", Math.pow(Length.YARD.getFactor(), 2)),
+	ACRE("area.acre", SQUARE_YARD.factor / 4840),
+	PYUNGBANG_JA("area.pyungbangJa", Math.pow(Length.JA.getFactor(), 2)),
+	PYUNG("area.pyung", Math.pow(Length.GAN.getFactor(), 2)),
+	DANBO("area.danbo", PYUNG.factor / 300),
+	JUNGBO("area.jungbo", DANBO.factor / 10);
 
+	private final double factor;
 	private String name, html;
-	private double factor;
 
 	Area(String key, double factor) {
 		try {
-			ResourceBundle bundle = ResourceBundle.getBundle("/area.xml", getClass());
-			ResourceBundle bundleHtml = ResourceBundle.getBundle("/area-unit.properties", getClass());
-			this.name = bundle.get(key).get();
-			this.html = bundleHtml.get(key).get();
+
+			this.name = Bundle.get(key);
+			this.html = Bundle.getUnit(key);
 		} catch (Throwable e) {
 			this.name = this.name();
 			this.html = this.name();

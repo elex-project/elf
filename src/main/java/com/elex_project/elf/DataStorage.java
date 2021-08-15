@@ -1,36 +1,34 @@
 /*
  * Project Elf
- * http://www.elex-project.com/
- * Copyright (c) 2017. Elex. All Rights Reserved.
+ * Unit Conversion
  *
+ * Copyright (c) 2017-2021. Elex. All Rights Reserved.
+ * https://www.elex-project.com/
  */
 
 package com.elex_project.elf;
 
-import com.elex_project.abraxas.ResourceBundle;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public enum DataStorage implements IConvertableUnit<DataStorage> {
-	BIT("bit", 8),
-	BYTE("byte", 1),
-	KILOBYTE("kilobyte", BYTE.factor / 1024),
-	MEGABYTE("megabyte", KILOBYTE.factor / 1024),
-	GIGABYTE("gigabyte", MEGABYTE.factor / 1024),
-	TERABYTE("terabyte", GIGABYTE.factor / 1024),
+	BIT("storage.bit", 8),
+	BYTE("storage.byte", 1),
+	KILOBYTE("storage.kilobyte", BYTE.factor / 1024),
+	MEGABYTE("storage.megabyte", KILOBYTE.factor / 1024),
+	GIGABYTE("storage.gigabyte", MEGABYTE.factor / 1024),
+	TERABYTE("storage.terabyte", GIGABYTE.factor / 1024),
 	//PETABYTE("petabyte", TERABYTE.factor/1024),
 	;
 
+	private final double factor;
 	private String name, html;
-	private double factor;
 
 	DataStorage(String key, double factor) {
 		try {
-			ResourceBundle bundle = ResourceBundle.getBundle("/storage.xml", getClass());
-			ResourceBundle bundleHtml = ResourceBundle.getBundle("/storage-unit.properties", getClass());
-			this.name = bundle.get(key).get();
-			this.html = bundleHtml.get(key).get();
+			this.name = Bundle.get(key);
+			this.html = Bundle.getUnit(key);
 		} catch (Throwable e) {
 			this.name = this.name();
 			this.html = this.name();
